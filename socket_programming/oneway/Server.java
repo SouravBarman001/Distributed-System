@@ -7,6 +7,7 @@ import java.net.Socket;
 public class Server {
     public static void main(String[] args) throws IOException {
         System.out.println("Server is started");
+
         ServerSocket ss= new ServerSocket(3000);
         System.out.println("Server is waiting for client request");
         Socket s = ss.accept();
@@ -14,6 +15,12 @@ public class Server {
 
         DataInputStream br= new DataInputStream(s.getInputStream());
     //    String str = String.valueOf(br.read());
-        System.out.println("Client data :"+br.readUTF().toUpperCase());
+
+        String str = br.readUTF().toUpperCase();
+        System.out.println("Uppper case :"+str);
+        DataOutputStream os = new DataOutputStream(s.getOutputStream()); // destination address printer,monitor,socket
+        //PrintWriter pw = new PrintWriter(os);
+        os.writeUTF(str);
+        os.flush();
     }
 }

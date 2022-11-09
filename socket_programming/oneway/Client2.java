@@ -1,14 +1,16 @@
 package socket_programming.oneway;
 
-import java.io.*;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
 //socket have input port and output port
-public class Client {
+public class Client2 {
 
     public void showInfo() throws IOException {
-        System.out.println("Client one---------");
+        System.out.println("Client two---------");
+
         String ip = "localhost";
         int port = 3000; // (0-1023) reserved port ->> 65525
         Socket s = new Socket(ip,port);
@@ -21,17 +23,11 @@ public class Client {
         //PrintWriter pw = new PrintWriter(os);
         os.writeUTF(str);
         os.flush();
-
-//        DataInputStream br= new DataInputStream(s.getInputStream());
-//        //    String str = String.valueOf(br.read());
-//        System.out.println("Client data from server:"+br.readUTF());
     }
     public static void main(String[] args) throws IOException {
 
-        Client objOne = new Client();
+        Client2 objOne = new Client2();
         objOne.showInfo();
-
-
 
 
 
