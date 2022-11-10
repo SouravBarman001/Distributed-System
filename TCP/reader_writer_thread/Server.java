@@ -1,4 +1,5 @@
-package TCP;
+package TCP.reader_writer_thread;
+
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -17,6 +18,8 @@ public class Server {
 
             // new Server Thread Start.....
             new ServerThread(socket);
+
+
         }
     }
 }
@@ -49,7 +52,6 @@ class ServerThread implements Runnable {
 
                 String serverMsg = (String) cMsg;
                 serverMsg = serverMsg.toUpperCase();
-
                 //send to client..
                 oos.writeObject(serverMsg);
             }
