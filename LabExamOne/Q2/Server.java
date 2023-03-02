@@ -9,7 +9,7 @@ import java.net.Socket;
 
 public class Server {
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(4001);
+        ServerSocket serverSocket = new ServerSocket(4444);
         System.out.println("Server Started..");
 
         while (true) {

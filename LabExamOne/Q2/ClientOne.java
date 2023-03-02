@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ClientOne {
     public static void main(String[] args) throws IOException {
         System.out.println("Client started..");
-        Socket socket = new Socket("127.0.0.1", 4001);
+        Socket socket = new Socket("16.0.0.40", 4444);
         System.out.println("Client Connected..");
 
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
