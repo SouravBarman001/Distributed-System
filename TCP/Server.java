@@ -5,10 +5,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Server {
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(22222);
+        ServerSocket serverSocket = new ServerSocket(32341);
         System.out.println("Server Started..");
 
         while (true) {
@@ -47,11 +48,14 @@ class ServerThread implements Runnable {
                     break;
                 System.out.println("From Client: " + (String) cMsg);
 
-                String serverMsg = (String) cMsg;
-                serverMsg = serverMsg.toUpperCase();
+                Scanner sc = new Scanner(System.in);
+
+                String message = sc.nextLine();
+
+                //String serverMsg = (String) cMsg;
 
                 //send to client..
-                oos.writeObject(serverMsg);
+                oos.writeObject(message);
             }
 
         } catch (ClassNotFoundException | IOException e) {

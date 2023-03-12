@@ -11,7 +11,7 @@
 //    public static void main(String[] args) throws Exception{
 //        System.out.println("Server class run");
 //        while (true){
-//            ServerSocket serverSocket = new ServerSocket(3399);
+//            ServerSocket serverSocket = new ServerSocket(4000);
 //            Socket socket = serverSocket.accept();
 //            System.out.println("Client is connected");
 //            ServerThread serverThread = new ServerThread(socket);

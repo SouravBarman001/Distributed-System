@@ -14,7 +14,7 @@ public class ClientOne {
         PrintWriter os=null;
         try
         {
-            s1=new Socket("localhost",3399);
+            s1=new Socket("localhost",4445);
             br=new DataInputStream(System.in);
             is=new DataInputStream(s1.getInputStream());
             os=new PrintWriter(s1.getOutputStream());
